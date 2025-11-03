@@ -1,33 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+
     <title>Dessert Recipes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff7f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d2691e;
+        }
+
+        .recipe {
+            background-color: #ffe4c4;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #a0522d;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+        }
+
+        button {
+            background-color: #d2691e;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background-color: #8b4513;
+        }
+
+        .steps {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
+
     <h1>Dessert Recipes</h1>
 
-    <h2>1. Chocolate Mousse</h2>
-    <ul>
-        <li>Dark chocolate</li>
-        <li>Heavy cream</li>
-        <li>Eggs</li>
-        <li>Sugar</li>
-    </ul>
-    <ol>
-        <li>Melt chocolate, whip cream, fold in eggs.</li>
-        <li>Chill before serving.</li>
-    </ol>
+    <!-- Recipe 1 -->
+    <div class="recipe">
+        <h2>Chocolate Brownie</h2>
+        <h3>Ingredients:</h3>
+        <ul>
+            <li>1 cup flour</li>
+            <li>1/2 cup cocoa powder</li>
+            <li>1 cup sugar</li>
+            <li>1/2 cup butter</li>
+            <li>2 eggs</li>
+        </ul>
+        <button onclick="toggleSteps('brownieSteps')">Show/Hide Steps</button>
+        <div id="brownieSteps" class="steps">
+            <h3>Steps:</h3>
+            <ol>
+                <li>Preheat oven to 180°C.</li>
+                <li>Melt butter and mix with sugar and eggs.</li>
+                <li>Add flour and cocoa powder and mix well.</li>
+                <li>Bake for 25-30 minutes.</li>
+            </ol>
+        </div>
+    </div>
 
-    <h2>2. Fruit Salad</h2>
-    <ul>
-        <li>Bananas, apples, grapes, pineapple</li>
-        <li>Honey</li>
-        <li>Lime juice</li>
-    </ul>
-    <ol>
-        <li>Mix fruits, drizzle honey and lime juice.</li>
-        <li>Serve chilled.</li>
-    </ol>
+    <!-- Recipe 2 -->
+    <div class="recipe">
+        <h2>Fruit Salad</h2>
+        <h3>Ingredients:</h3>
+        <ul>
+            <li>1 apple</li>
+            <li>1 banana</li>
+            <li>1 cup grapes</li>
+            <li>1/2 cup orange juice</li>
+        </ul>
+        <button onclick="toggleSteps('saladSteps')">Show/Hide Steps</button>
+        <div id="saladSteps" class="steps">
+            <h3>Steps:</h3>
+            <ol>
+                <li>Chop all fruits into small pieces.</li>
+                <li>Mix fruits with orange juice.</li>
+                <li>Serve chilled.</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function toggleSteps(id) {
+            const steps = document.getElementById(id);
+            if (steps.style.display === "none" || steps.style.display === "") {
+                steps.style.display = "block";
+            } else {
+                steps.style.display = "none";
+            }
+        }
+    </script>
+
 </body>
 </html>
